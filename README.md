@@ -103,3 +103,82 @@
 ---
 
 ## 🏗 System Architecture
+# 🎓 Smart Placement Management System
+
+<div align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django">
+  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white" alt="JWT">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
+</div>
+
+<div align="center">
+  <h3>A full-stack web application for college placement management</h3>
+  <p>Streamline your campus placement process with this comprehensive system</p>
+</div>
+
+---
+
+## 📋 Table of Contents
+
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Prerequisites](#-prerequisites)
+- [Installation Guide](#-installation-guide)
+- [API Documentation](#-api-documentation)
+- [User Roles](#-user-roles)
+- [Usage Guide](#-usage-guide)
+- [License](#-license)
+
+---
+
+## ✨ Features
+
+### 👨‍🎓 For Students
+- ✅ **User Registration** - Create account with personal and academic details
+- ✅ **Profile Management** - Upload profile photo and resume (PDF/DOC)
+- ✅ **Dashboard** - View available drives, applied drives, and selection status
+- ✅ **Company Drives** - Browse and filter available placement drives
+- ✅ **Apply Online** - Apply for drives with single click
+- ✅ **Track Applications** - Real-time status (Pending/Shortlisted/Selected/Rejected)
+- ✅ **Skills Management** - Add and update technical skills
+- ✅ **JWT Authentication** - Secure login/logout
+
+### 👨‍💼 For Placement Officers
+- ✅ **Separate Login** - Admin-created credentials
+- ✅ **Dashboard** - Statistics overview (total students, drives, applications)
+- ✅ **Drive Management** - Create, update, delete company drives
+- ✅ **Student Management** - View all registered students
+- ✅ **Advanced Filtering** - Filter students by CGPA and skills
+- ✅ **Shortlisting** - Shortlist students for drives
+- ✅ **Status Updates** - Update application status
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+| Technology | Purpose |
+|------------|---------|
+| React 18 | UI library |
+| Vite | Build tool |
+| Tailwind CSS | Styling |
+| Axios | HTTP client |
+| React Router DOM | Navigation |
+| React Hot Toast | Notifications |
+| Heroicons | Icons |
+
+### Backend
+| Technology | Purpose |
+|------------|---------|
+| Django 4.2 | Web framework |
+| Django REST Framework | REST API |
+| SimpleJWT | JWT authentication |
+| MySQL | Database |
+| PyMySQL | MySQL connector |
+| Pillow | Image processing |
+
+
+
