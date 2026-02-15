@@ -1,62 +1,105 @@
-echo # Smart Placement Management System > README.md
-echo. >> README.md
-echo A full-stack web application for college placement management with React and Django. >> README.md
-echo. >> README.md
-echo ## Features >> README.md
-echo. >> README.md
-echo - Student Registration and Login >> README.md
-echo - Placement Officer Dashboard >> README.md
-echo - Company Drive Management >> README.md
-echo - Resume Upload (PDF/DOC) >> README.md
-echo - Profile Photo Upload >> README.md
-echo - Apply for Drives >> README.md
-echo - Application Status Tracking >> README.md
-echo - Filter Students by CGPA and Skills >> README.md
-echo - JWT Authentication >> README.md
-echo - Role-based Access Control >> README.md
-echo. >> README.md
-echo ## Tech Stack >> README.md
-echo. >> README.md
-echo **Frontend:** >> README.md
-echo - React.js >> README.md
-echo - Vite >> README.md
-echo - Tailwind CSS >> README.md
-echo - Axios >> README.md
-echo - React Router >> README.md
-echo. >> README.md
-echo **Backend:** >> README.md
-echo - Django >> README.md
-echo - Django REST Framework >> README.md
-echo - MySQL >> README.md
-echo - JWT Authentication >> README.md
-echo. >> README.md
-echo ## Installation >> README.md
-echo. >> README.md
-echo ### Backend Setup >> README.md
-echo ```bash >> README.md
-echo cd backend >> README.md
-echo python -m venv venv >> README.md
-echo venv\Scripts\activate  # On Windows >> README.md
-echo pip install -r requirements.txt >> README.md
-echo python manage.py migrate >> README.md
-echo python manage.py createsuperuser >> README.md
-echo python manage.py runserver >> README.md
-echo ``` >> README.md
-echo. >> README.md
-echo ### Frontend Setup >> README.md
-echo ```bash >> README.md
-echo cd frontend >> README.md
-echo npm install >> README.md
-echo npm run dev >> README.md
-echo ``` >> README.md
-echo. >> README.md
-echo ## API Endpoints >> README.md
-echo. >> README.md
-echo - POST /api/register/ - Student registration >> README.md
-echo - POST /api/login/ - User login >> README.md
-echo - GET /api/students/ - Get student profile >> README.md
-echo - GET /api/drives/ - List company drives >> README.md
-echo - POST /api/applications/ - Apply for drive >> README.md
-echo. >> README.md
-echo ## License >> README.md
-echo MIT >> README.md
+# 🎓 Smart Placement Management System
+
+<div align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django">
+  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white" alt="JWT">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
+</div>
+
+<div align="center">
+  <h3>A full-stack web application for college placement management</h3>
+  <p>Streamline your campus placement process with this comprehensive system</p>
+</div>
+
+---
+
+## 📋 Table of Contents
+
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [System Architecture](#-system-architecture)
+- [Project Structure](#-project-structure)
+- [Prerequisites](#-prerequisites)
+- [Installation Guide](#-installation-guide)
+  - [Backend Setup](#backend-setup)
+  - [Frontend Setup](#frontend-setup)
+  - [Database Setup](#database-setup)
+- [API Documentation](#-api-documentation)
+- [User Roles](#-user-roles)
+  - [Student Features](#student-features)
+  - [Placement Officer Features](#placement-officer-features)
+- [Screenshots](#-screenshots)
+- [Usage Guide](#-usage-guide)
+- [Environment Variables](#-environment-variables)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
+
+---
+
+## ✨ Features
+
+### 👨‍🎓 For Students
+- ✅ **User Registration** - Create account with personal and academic details
+- ✅ **Profile Management** - Upload profile photo and resume (PDF/DOC)
+- ✅ **Dashboard** - View available drives, applied drives, and selection status
+- ✅ **Company Drives** - Browse and filter available placement drives
+- ✅ **Apply Online** - Apply for drives with single click
+- ✅ **Track Applications** - Real-time status (Pending/Shortlisted/Selected/Rejected)
+- ✅ **Skills Management** - Add and update technical skills
+- ✅ **JWT Authentication** - Secure login/logout
+
+### 👨‍💼 For Placement Officers
+- ✅ **Separate Login** - Admin-created credentials
+- ✅ **Dashboard** - Statistics overview (total students, drives, applications)
+- ✅ **Drive Management** - Create, update, delete company drives
+- ✅ **Student Management** - View all registered students
+- ✅ **Advanced Filtering** - Filter students by CGPA and skills
+- ✅ **Shortlisting** - Shortlist students for drives
+- ✅ **Status Updates** - Update application status
+- ✅ **Application Review** - Review and manage applications
+
+### 🔧 Technical Features
+- ✅ **JWT Authentication** - Secure token-based authentication
+- ✅ **Role-based Access** - Different dashboards for students and officers
+- ✅ **File Upload** - Resume and profile photo upload with validation
+- ✅ **Responsive Design** - Works on desktop, tablet, and mobile
+- ✅ **Pagination** - Efficient handling of large data sets
+- ✅ **RESTful API** - Well-structured API endpoints
+- ✅ **Toast Notifications** - User-friendly feedback messages
+- ✅ **Loading States** - Spinners and loaders for better UX
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+| Technology | Purpose |
+|------------|---------|
+| **React 18** | UI library |
+| **Vite** | Build tool and dev server |
+| **Tailwind CSS** | Styling and responsive design |
+| **Axios** | HTTP client for API calls |
+| **React Router DOM** | Navigation and routing |
+| **React Hot Toast** | Toast notifications |
+| **Headless UI** | Accessible UI components |
+| **Heroicons** | SVG icons |
+| **React Paginate** | Pagination component |
+| **JWT Decode** | Token decoding |
+
+### Backend
+| Technology | Purpose |
+|------------|---------|
+| **Django 4.2** | Web framework |
+| **Django REST Framework** | REST API building |
+| **SimpleJWT** | JWT authentication |
+| **MySQL** | Database |
+| **PyMySQL** | MySQL connector |
+| **Pillow** | Image processing |
+| **Django CORS Headers** | CORS management |
+
+---
+
+## 🏗 System Architecture
