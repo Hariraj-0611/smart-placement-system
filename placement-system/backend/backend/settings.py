@@ -58,22 +58,39 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-# Database Configuration - MySQL with PyMySQL
+# # Database Configuration - MySQL with PyMySQL
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'placement_db',
+#         'USER': 'root',
+#         'PASSWORD': 'root',  # CHANGE THIS to your actual MySQL password
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#             'charset': 'utf8mb4',
+#             'autocommit': True,
+#         }
+#     }
+# }
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'placement_db',
-        'USER': 'root',
-        'PASSWORD': 'root',  # CHANGE THIS to your actual MySQL password
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': os.environ.get('placement_db'),
+        'USER': os.environ.get('root'),
+        'PASSWORD': os.environ.get('root'),
+        'HOST': os.environ.get('localhost'),
+        'PORT': os.environ.get('3306'),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
             'charset': 'utf8mb4',
-            'autocommit': True,
         }
     }
 }
+
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
