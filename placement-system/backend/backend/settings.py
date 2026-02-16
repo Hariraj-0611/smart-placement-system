@@ -79,11 +79,11 @@ import os
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('placement_db'),
-        'USER': os.environ.get('root'),
-        'PASSWORD': os.environ.get('root'),
-        'HOST': os.environ.get('localhost'),
-        'PORT': os.environ.get('3306'),
+        'NAME': 'railway',
+        'USER': 'root',
+        'PASSWORD': 'XBOQAFAnWAuWLKMUHiRblknseCoasTfC',
+        'HOST': 'crossover.proxy.rlwy.net',
+        'PORT': '35882',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
             'charset': 'utf8mb4',
