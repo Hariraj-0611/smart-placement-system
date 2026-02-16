@@ -210,14 +210,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-import os
-import dj_database_url
-from dotenv import load_dotenv
-
-load_dotenv()
-
-# Check if DATABASE_URL exists, otherwise use SQLite
+# Database Configuration
 if os.getenv('DATABASE_URL'):
+    # Use the database URL from environment (e.g., from Render)
     DATABASES = {
         'default': dj_database_url.config(
             default=os.getenv('mysql://root:XBOQAFAnWAuWLKMUHiRblknseCoasTfC@crossover.proxy.rlwy.net:35882/railway'),
@@ -225,7 +220,7 @@ if os.getenv('DATABASE_URL'):
         )
     }
 else:
-    # Use SQLite as the default database
+    # Use SQLite as the default database for local development
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
