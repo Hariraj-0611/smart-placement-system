@@ -210,39 +210,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-# # Database Configuration - Using Railway MySQL
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default=os.getenv('mysql://root:XBOQAFAnWAuWLKMUHiRblknseCoasTfC@crossover.proxy.rlwy.net:35882/railway'),
-#         conn_max_age=600,
-#         engine='django.db.backends.mysql'  # Specify MySQL engine
-#     )
-# }
 import os
 import dj_database_url
 from dotenv import load_dotenv
 
 load_dotenv()
 
-# Check if DATABASE_URL exists, otherwise use local settings
+# Check if DATABASE_URL exists, otherwise use SQLite
 if os.getenv('DATABASE_URL'):
     DATABASES = {
         'default': dj_database_url.config(
             default=os.getenv('mysql://root:XBOQAFAnWAuWLKMUHiRblknseCoasTfC@crossover.proxy.rlwy.net:35882/railway'),
-            conn_max_age=600,
-            engine='django.db.backends.mysql'
+            conn_max_age=600
         )
     }
 else:
-    # Your local database settings
+    # Use SQLite as the default database
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'placement_db',
-            'USER': 'root',
-            'PASSWORD': 'root',  # Change this
-            'HOST': 'localhost',
-            'PORT': '3306',
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
 
