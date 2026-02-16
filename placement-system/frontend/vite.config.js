@@ -7,11 +7,11 @@ export default defineConfig({
     port:3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        target: 'https://smart-placement-system-3.onrender.com',
         changeOrigin: true,
       },
       '/media': {
-        target: 'http://localhost:8000',
+        target: 'https://smart-placement-system-3.onrender.com',
         changeOrigin: true,
       },
     },
