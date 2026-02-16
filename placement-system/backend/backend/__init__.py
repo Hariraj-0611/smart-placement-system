@@ -1,5 +1,8 @@
+
+import pymysql 
+pymysql.install_as_MySQLdb()
 try:
-	import MySQLdb  # prefer mysqlclient when available
+	pass
 except Exception:
 	try:
 		import pymysql
