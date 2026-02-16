@@ -130,7 +130,8 @@ const StudentProfile = () => {
             <div className="relative">
               {profile?.profile_photo ? (
                 <img
-                  src={`http://localhost:8000${profile.profile_photo}`}
+                  // src={`http://localhost:8000${profile.profile_photo}`}
+                  src={`https://smart-placement-system-4.onrender.com${profile.profile_photo}`}
                   alt="Profile"
                   className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg"
                 />

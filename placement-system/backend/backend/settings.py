@@ -159,8 +159,10 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-your-dev-key')
 DEBUG = os.getenv('DEBUG', 'False') == 'False'
 
 # Get the hostname from Render
+
 RENDER_EXTERNAL_HOSTNAME = os.getenv('RENDER_EXTERNAL_HOSTNAME')
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'smart-placement-system-4.onrender.com']
+# ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 if RENDER_EXTERNAL_HOSTNAME:
     # ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
     ALLOWED_HOSTS = ["smart-placement-system-4.onrender.com"]
@@ -269,8 +271,8 @@ AUTH_USER_MODEL = 'api.User'
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
-    'http://localhost:3000',
-    'https://your-frontend.onrender.com',  # Add your frontend URL when deployed
+    'https://smart-placement-system-4.onrender.com',  # Backend URL
+    'https://smart-placement-system-steel.vercel.app/',  # Frontend URL (if deploy panne)
 ]
 
 CORS_ALLOW_CREDENTIALS = True
