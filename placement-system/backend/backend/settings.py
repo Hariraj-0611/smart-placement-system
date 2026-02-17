@@ -272,7 +272,7 @@ AUTH_USER_MODEL = 'api.User'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
     'https://smart-placement-system-4.onrender.com',  # Backend URL
-    'https://smart-placement-system-steel.vercel.app/',  # Frontend URL (if deploy panne)
+    'https://smart-placement-system-steel.vercel.app',  # Frontend URL (if deploy panne)
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -303,3 +303,25 @@ if not DEBUG:
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
+
+# Logging configuration
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+}
