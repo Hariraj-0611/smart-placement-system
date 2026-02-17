@@ -158,3 +158,36 @@ class ApplicationViewSet(viewsets.ModelViewSet):
     queryset = Application.objects.all().order_by('-applied_at')
     serializer_class = ApplicationSerializer
     permission_classes = [IsAuthenticated]
+
+
+
+
+
+
+
+
+
+
+
+
+
+from rest_framework.decorators import action
+
+class ApplicationViewSet(viewsets.ModelViewSet):
+    queryset = Application.objects.all().order_by('-applied_at')
+    serializer_class = ApplicationSerializer
+    permission_classes = [IsAuthenticated]
+    
+    @action(detail=False, methods=['get'], url_path='my-applications')
+    def my_applications(self, request):
+        """Get applications for logged-in student"""
+        if request.user.role != 'student':
+            return Response({'error': 'Only students can access'}, status=403)
+        
+        try:
+            profile = StudentProfile.objects.get(user=request.user)
+            applications = Application.objects.filter(student=profile).order_by('-applied_at')
+            serializer = self.get_serializer(applications, many=True)
+            return Response(serializer.data)
+        except StudentProfile.DoesNotExist:
+            return Response({'error': 'Student profile not found'}, status=404)
